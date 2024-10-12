@@ -1,0 +1,37 @@
+version: '3.9'
+
+services:
+  btracker_database:
+    image: postgres:13.0-alpine
+    env_file:
+      - ./database/.env
+    container_name: tdatabase
+    ports:
+      - 5432:5432
+    networks:
+      - bst_network
+    volumes:
+      - ./database/volume:/var/lib/postgresql/data:rw
+  btracker_backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    env_file:
+      - ./backend/.env
+    container_name: tbackend
+    expose:
+      - 8000
+    ports:
+      - 8000:8000
+    networks:
+      - bst_network
+    depends_on:
+      - btracker_database
+    links:
+      - btracker_database:btracker_database
+
+networks:
+  bst_network:
+    driver: bridge
+
+  

@@ -1,0 +1,44 @@
+/* BusCard Styles */
+.busCard {
+  background-color: #fce7e7;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 20px;
+  margin: 16px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.busCard:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.);
+}
+
+.busCard h3 {
+  font-size: 1.8rem;
+  color: #ff6f61;
+}
+
+.busCard p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.busCardActions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.busCardActions button {
+  background-color: #ff6f61;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.busCardActions button:hover {
+  background-color: #e6503d;
+}
